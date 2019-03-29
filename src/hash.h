@@ -54,7 +54,7 @@ public:
 	void insert(T item);
 	bool find(T item);
 
-	virtual int hash(T item) = 0;
+	virtual int hash(const T &) const = 0;
 	
 
 	~Hash()
