@@ -17,19 +17,23 @@ class Hash
 {
 
 private:
-	custom::list<T> hashTable;
+	custom::list<T> *hashTable;
 	int amount;
 	int buckets;
 
 public:
 	Hash() 
 	{
-		
+		hashTable = nullptr;
+		buckets = 0;
+		amount = 0;
 	}
 
 	Hash(int numItems)
 	{
-
+		hashTable = nullptr;
+		buckets = 0;
+		amount = numItems;
 	}
 
 	int capacity() const
