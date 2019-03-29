@@ -54,7 +54,7 @@ public:
 	void insert(T item);
 	bool find(T item);
 
-	virtual int hash(const T &) const = 0;
+	virtual int hash(const T & t) const = 0;
 	
 
 	~Hash()
@@ -64,10 +64,10 @@ public:
 };
 
 template <class T>
-void Hash<T>::insert(T)
+void Hash<T>::insert(T item)
 {
 	int i = 0;
-	hashTable[i].insert(T);
+	hashTable[i].insert(item);
 }
 
 
