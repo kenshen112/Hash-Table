@@ -121,7 +121,7 @@ namespace custom
 
 
 
-		list <T> ::iterator find(const T & t);
+		bool find(const T & t);
 		void erase(list <T> ::iterator it);
 		list <T> ::iterator end();
 		list <T> ::iterator begin();
@@ -477,22 +477,22 @@ namespace custom
 	}
 
 	template<class T>
-	typename list<T>::iterator list<T>::find(const T & t)
+	bool list<T>::find(const T & t)
 	{
 		if (pHead == nullptr)
 		{
-			return nullptr;
+			return false;
 		}
 
 		for (Node <T> *tempNode = pHead; tempNode; tempNode = tempNode->pNext)
 		{
 			if (tempNode->data == t)
 			{
-				return iterator(tempNode);
+				return true;
 			}
 		}
 
-		return iterator(nullptr);
+		return false;
 	}
 
 	template <class T>

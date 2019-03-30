@@ -84,23 +84,15 @@ void Hash<T>::insert(T item)
 template <class T>
 bool Hash<T>::find(T item)
 {
-	bool isFound = 0;
-	int bucket = 0;
-
-	while (isFound != 1)
-	{
-		if (hashTable[bucket].find(item))
-		{
-			isFound = 1;
-		}
-
-		else
-		{
-			bucket++;
-		}
-
-	}
-
+   int i = hash(item);
+   if(hashTable[i].find(item))
+   {
+      return true;
+   }
+   else
+   {
+      return false;
+   }
 }
 
 
