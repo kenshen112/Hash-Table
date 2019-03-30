@@ -18,7 +18,7 @@ template <class T>
 class sHash: public Hash<T>
 {
 public: 
-	int hash(const std::string & item)
+	int hash(const std::string & item) const 
 	{		      
 		int sum = 0;
 		for (int k = 0; k < item.length(); k++)
@@ -28,7 +28,11 @@ public:
 
 };
 
+class spell
+{
+	sHash<std::string> stringHash;
 
-void spellCheck();
-
+public: 
+	void spellCheck();
+};
 #endif // SPELL_CHECK_H
