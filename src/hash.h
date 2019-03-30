@@ -17,7 +17,7 @@ class Hash
 {
 
 private:
-        std::list <T> *hashTable;
+    std::list <T> *hashTable;
 	int amount;
 	int buckets;
 
@@ -37,7 +37,7 @@ public:
 
                 try
                 {
-                   hashTable = new std::list <T>;
+                   hashTable = new std::list<T>[amount]();
                 }
                 catch(std::bad_alloc)
                 {
@@ -76,7 +76,8 @@ template <class T>
 void Hash<T>::insert(T item)
 {
    int i = hash(item);
-//   hashTable[i].insert(item);
+
+   hashTable->push_back(item);
 }
 
 template <class T>
