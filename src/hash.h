@@ -10,14 +10,14 @@
 #ifndef HASH_H
 #define HASH_H
 
-#include "list.h"
+#include <list>
 
 template <class T>
 class Hash
 {
 
 private:
-	custom::list<T> *hashTable;
+        std::list <T> *hashTable;
 	int amount;
 	int buckets;
 
@@ -29,26 +29,35 @@ public:
 		amount = 0;
 	}
 
-	Hash(int numItems)
+	Hash(int numBuckets)
 	{
 		hashTable = nullptr;
-		buckets = 0;
-		amount = numItems;
+		buckets = numBuckets;
+		amount = 0;
+
+                try
+                {
+                   hashTable = new std::list <T>;
+                }
+                catch(std::bad_alloc)
+                {
+                   throw "Error: unable to allocate space for a new list\n";
+                }
 	}
 
 	int capacity() const
 	{
-		return buckets;
+           return buckets;
 	}
 
 	int size()
 	{
-		return amount;
+           return amount;
 	}
 
 	bool empty()
 	{
-		return amount == 0;
+           return amount == 0;
 	}
 
 	void insert(T item);
@@ -66,9 +75,11 @@ public:
 template <class T>
 void Hash<T>::insert(T item)
 {
-	int i = 0;
-	hashTable[i].insert(item);
+   int i = hash(item);
+//   hashTable[i].insert(item);
 }
+
+
 
 
 
