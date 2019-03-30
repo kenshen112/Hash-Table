@@ -70,7 +70,11 @@ void Hash<T>::insert(T item)
 	hashTable[i].insert(item);
 }
 
+template <class T>
+bool Hash<T>::find(T item)
+{
 
+}
 
 #endif // SPELL_CHECK_H
 
