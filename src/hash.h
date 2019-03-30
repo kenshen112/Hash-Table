@@ -37,7 +37,7 @@ public:
 
                 try
                 {
-                   hashTable = new std::list<T>[amount]();
+                   hashTable = new std::list<T>[buckets]();
                 }
                 catch(std::bad_alloc)
                 {
