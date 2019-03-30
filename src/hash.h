@@ -77,7 +77,7 @@ void Hash<T>::insert(T item)
 {
    int i = hash(item);
 
-   hashTable->push_back(item);
+   hashTable[i].push_back(item);
 }
 
 template <class T>
