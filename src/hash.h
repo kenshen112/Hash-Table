@@ -10,14 +10,14 @@
 #ifndef HASH_H
 #define HASH_H
 
-#include <list>
+#include "list.h"
 
 template <class T>
 class Hash
 {
 
 private:
-    std::list <T> *hashTable;
+    custom::list <T> *hashTable;
 	int amount;
 	int buckets;
 
@@ -37,7 +37,7 @@ public:
 
                 try
                 {
-                   hashTable = new std::list<T>[buckets]();
+                   hashTable = new custom::list<T>[buckets]();
                 }
                 catch(std::bad_alloc)
                 {
@@ -78,6 +78,7 @@ void Hash<T>::insert(T item)
    int i = hash(item);
 
    hashTable[i].push_back(item);
+   amount++;
 }
 
 template <class T>

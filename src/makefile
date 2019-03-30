@@ -20,7 +20,7 @@ a.out: assignment12.o spellCheck.o
 #      assignment12.o     : the driver program
 #      spellCheck.o       : the spell-check program and driver
 ##############################################################
-assignment12.o: hash.h assignment12.cpp #list.h
+assignment12.o: hash.h assignment12.cpp list.h
 	g++ -c assignment12.cpp -g -std=c++11
 
 spellCheck.o: hash.h spellCheck.h spellCheck.cpp
