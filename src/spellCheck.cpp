@@ -19,7 +19,7 @@ using namespace std;
  * SPELL CHECK
  * Prompt the user for a file to spell-check
  ****************************************/
-void spell::spellCheck()
+void spellCheck()
 {
 	std::cout << "What file do you want to check?\n";
 	std::string filename;
