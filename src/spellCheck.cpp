@@ -21,7 +21,7 @@ using namespace std;
  ****************************************/
 void spellCheck()
 {
-	std::cout << "What file do you want to check?\n";
+	std::cout << "What file do you want to check? ";
 	std::string filename;
 	std::cin >> filename;
 
